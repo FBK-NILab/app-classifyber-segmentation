@@ -31,7 +31,7 @@ Output: \
 You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in muliple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
 
 Branch 1.0: \
-You can choose the bundle(s) to be segmented by providing the id(s) related to the traiining results you want to use as follows: \
+You can choose the bundle(s) to be segmented by providing the id(s) related to the traiining results you want to use as follows: 
 
 HCP-minor: \
 38 - Left pArc \
