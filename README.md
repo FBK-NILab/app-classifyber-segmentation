@@ -53,7 +53,8 @@ HCP-minor: \
 ```
 {
   "tractogram_static": "./track.tck",
-  "t1_static": "./t1.nii.gz"
+  "t1_static": "./t1.nii.gz",
+  "tractID_list": "32, 33, 40, 45"
 }
 ```
 3. Launch the App by executing `main`.
