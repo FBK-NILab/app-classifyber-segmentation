@@ -17,8 +17,7 @@ Code to run Classifyber as a pre-trained bundle segmentation method. Classifyber
 [![NSF-AOC-1916518](https://img.shields.io/badge/NSF_AOC-1916518-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1916518)
 
 ### Reference
-"Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation", Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De
-Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. https://www.biorxiv.org/content/10.1101/2020.02.10.942714v1
+["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://www.biorxiv.org/content/10.1101/2020.02.10.942714v1), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. 
 
 ## Running the app
 ### On [BrainLife.io](http://brainlife.io/) 
@@ -28,7 +27,7 @@ Inputs: \
 You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject. WARNING: the tractogram needs to be already co-registered in the MNI152 T1 space.  
 
 Output: \
-You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in muliple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
+You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
 
 Branch 1.0: \
 You can choose the bundle(s) to be segmented by providing the id(s) related to the traiining results you want to use as follows: 
