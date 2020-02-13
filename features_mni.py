@@ -88,7 +88,7 @@ def compute_X_roi(superset, tract_name):
 	for i, n in d.items():
 		if n == {tract_name}:
 			tractID=eval(i)
-	if tractID < 30:
+	if tractID < 37:
 		roi_dir = 'templates_mni125'
 		roi1_filename = '%s/sub-MNI_var-AFQ_lab-%s_roi.nii.gz' %(roi_dir, roi1_lab)
 		roi2_filename = '%s/sub-MNI_var-AFQ_lab-%s_roi.nii.gz' %(roi_dir, roi2_lab)
