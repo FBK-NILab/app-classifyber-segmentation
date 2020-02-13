@@ -33,6 +33,10 @@ You will get the wmc segmentation of the bundle(s) of interest in the target sub
 Branch 1.0: \
 You can choose the bundle(s) to be segmented by providing the id(s) related to the traiining results you want to use as follows: 
 
+HCP-IFOF: \
+32 - Left IFOF \
+33 - Right IFOF
+
 HCP-minor: \
 38 - Left pArc \
 39 - Right pArc \
@@ -42,3 +46,20 @@ HCP-minor: \
 43 - Right MdLF-SPL \
 44 - Left MdLF-Ang \
 45 - Right MdLF-Ang 
+
+### Running locally
+1. git clone this repo.
+2. Inside the cloned directory, create `config.json` with something like the following content with paths to your input files:
+```
+{
+  "tractogram_static": "./track.tck",
+  "t1_static": "./t1.nii.gz"
+}
+```
+3. Launch the App by executing `main`.
+```
+./main
+```
+
+#### Dependencies
+This App requires [singularity](https://sylabs.io/singularity/) to run. If you don’t have singularity, you will need to install following dependencies. It also requires [jq](https://stedolan.github.io/jq/).
