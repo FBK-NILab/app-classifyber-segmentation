@@ -24,7 +24,7 @@ Code to run Classifyber as a pre-trained bundle segmentation method. Classifyber
 You can submit this App online at https://doi.org/10.25663/brainlife.app.265 via the “Execute” tab.
 
 Inputs: \
-You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject. WARNING: the tractogram needs to be already co-registered in the MNI152 T1 space (you can use this app https://doi.org/10.25663/brainlife.app.202 to warp your .tck file to the correct anatomical space).
+You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject. WARNING: the tractogram needs to be already co-registered in the MNI152 T1 space (you can use the app https://doi.org/10.25663/brainlife.app.202 to warp your .tck file to the correct anatomical space).
 
 Output: \
 You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
