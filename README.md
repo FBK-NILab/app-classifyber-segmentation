@@ -29,7 +29,7 @@ You only need to provide the tractogram of the (target) subject you want to extr
 Output: \
 You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
 
-Branch 1.0: \
+#### Branch 1.0:
 You can choose the bundle(s) to be segmented by providing the id(s) related to the training results you want to use as follows: 
 
 HCP-IFOF: \
@@ -45,6 +45,12 @@ HCP-minor: \
 43 - Right MdLF-SPL \
 44 - Left MdLF-Ang \
 45 - Right MdLF-Ang 
+
+#### Branch 2.0 (under development):
+Additional options with respect to the branch 1.0:
+- if the given tractogram is not already co-registered in the MNI152 T1 space, a streamline linear registration (SLR) to a whole brain streamline MNI template will be performed
+- possibility to select bundles also from the HCP-major and Clinical datasets
+- the ouput will be given in tck format as well
 
 ### Running locally
 1. git clone this repo.
