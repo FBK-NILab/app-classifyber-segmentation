@@ -46,7 +46,7 @@ HCP-minor: \
 44 - Left MdLF-Ang \
 45 - Right MdLF-Ang 
 
-#### Branch 2.0 (under development):
+#### Branch 1.1 (under development):
 Additional options with respect to branch 1.0:
 - if the given tractogram is not already co-registered in the MNI152 T1 space, a streamline linear registration (SLR) to a whole brain streamline MNI template will be performed
 - possibility to segment bundles conforming those of the HCP-major and Clinical datasets
