@@ -6,6 +6,9 @@ set -e
 set -x
 
 #execute app
+echo "Registering the tractogram to the MNI152 T1 template with ANTs..."
+./run_registration.sh
+
 echo "No examples provided. STARTING TEST..."
 SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://brainlife/dipy:0.16.0 ./run_test.sh
 #SINGULARITYENV_PYTHONNOUSERSITE=true  singularity exec docker://brainlife/dipy:1.1.1 ./run_test.sh
