@@ -3,7 +3,6 @@ import os
 import time
 import numpy as np
 import nibabel as nib
-from dipy.tracking.utils import length
 from dipy.tracking.streamline import set_number_of_points
 from dipy.tracking.distances import bundles_distances_mam, bundles_distances_mdf
 from nibabel.affines import apply_affine 
@@ -27,22 +26,6 @@ def bundle2roi_distance(bundle, roi_mask, distance='euclidean'):
 		d = cdist(sl, x_roi_coords, distance)
 		result.append(np.min(d)) 
 	return result	
-
-
-def resample_tract(tract, step_size):
-    """Resample the tract with the given step size.
-    """
-    lengths=list(length(tract))
-    tract_res = []
-    for i, f in enumerate(tract):
-    	if lengths[i]>step_size:
-    		nb_res_points = np.int(np.ceil(lengths[i]/step_size))
-    		tmp = set_number_of_points(f, nb_res_points)
-    	else:	
-    		tmp = f
-    	tract_res.append(tmp)
-    tract_res = nib.streamlines.array_sequence.ArraySequence(tract_res)
-    return tract_res
 
 
 def streamlines_idx(target_tract, kdt, prototypes, distance_func=bundles_distances_mam, nb_points=20, warning_threshold=1.0e-1):
