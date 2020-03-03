@@ -10,7 +10,7 @@ import ntpath
 import nibabel as nib
 import pickle
 import json
-from utils import compute_kdtree_and_dr_tractogram, compute_superset, save_trk
+from utils import compute_kdtree_and_dr_tractogram, compute_superset, save_trk, resample_tract
 from dipy.tracking.distances import bundles_distances_mam, bundles_distances_mdf
 from features_mni import compute_feature_matrix
 
@@ -45,9 +45,10 @@ def test_multiple_examples(tractogram_fname, src_dir, tract_name_list, out_dir):
 
 	tractogram = nib.streamlines.load(tractogram_fname)
 	tractogram = tractogram.streamlines
+	tractgram_res = resample_tract(tractogram, 0.625)
 
 	print("Compute kdt and prototypes...")
-	kdt, prototypes = compute_kdtree_and_dr_tractogram(tractogram, num_prototypes=num_prototypes, 
+	kdt, prototypes = compute_kdtree_and_dr_tractogram(tractogram_res, num_prototypes=num_prototypes, 
 									 				   distance_func=distance_func, nb_points=nb_points)
 		
 	for tract_name in tract_name_list:
@@ -56,7 +57,7 @@ def test_multiple_examples(tractogram_fname, src_dir, tract_name_list, out_dir):
 		example_fname = 'templates_tracts/%s.trk' %tract_name
 		tract = nib.streamlines.load(example_fname).streamlines
 		superset_idx_test = compute_superset(tract, kdt, prototypes, k=10000, distance_func=distance_func, nb_points=nb_points)
-		superset = tractogram[superset_idx_test]
+		superset = tractogram_res[superset_idx_test]
 		y_pred = tract_predict(src_dir, superset, tract_name, distance_func=distance_func, nb_points=nb_points)
 		estimated_tract_idx = np.where(y_pred>0)[0]
 		estimated_tract = tractogram[superset_idx_test[estimated_tract_idx]]
