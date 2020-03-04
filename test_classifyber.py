@@ -1,12 +1,11 @@
 """ Classification of multiple bundles from multiple examples.
 """
+from __future__ import print_function, division
 import os
 import sys
 import argparse
-import os.path
 import numpy as np
 import time
-import ntpath
 import nibabel as nib
 import pickle
 import json
@@ -52,10 +51,11 @@ def test_multiple_examples(tractogram_fname, src_dir, tract_name_list, out_dir):
 		
 	for tract_name in tract_name_list:
 		t1=time.time()
-		print("Computing the test superset...")
+		k = np.int(0.01*len(tractogram))
+		print("Computing the test superset with k = %i ..." %k)
 		example_fname = 'templates_tracts/%s.trk' %tract_name
 		tract = nib.streamlines.load(example_fname).streamlines
-		superset_idx_test = compute_superset(tract, kdt, prototypes, k=10000, distance_func=distance_func, nb_points=nb_points)
+		superset_idx_test = compute_superset(tract, kdt, prototypes, k=k, distance_func=distance_func, nb_points=nb_points)
 		superset = tractogram[superset_idx_test]
 		y_pred = tract_predict(src_dir, superset, tract_name, distance_func=distance_func, nb_points=nb_points)
 		estimated_tract_idx = np.where(y_pred>0)[0]
