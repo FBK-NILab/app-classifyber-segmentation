@@ -6,8 +6,12 @@ set -e
 set -x
 
 #execute app
-echo "Registering the tractogram to the MNI152 T1 template with ANTs..."
-./run_registration.sh
+if [ -f 'track_aligned/track.tck' ]; then 
+    echo "Tractogram already registered in MNI space."
+else 
+	echo "Registering the tractogram to the MNI152 T1 template with ANTs..."
+	./run_registration.sh
+fi
 
 echo "No examples provided. STARTING TEST..."
 SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://brainlife/dipy:0.16.0 ./run_test.sh
