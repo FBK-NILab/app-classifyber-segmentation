@@ -1,11 +1,11 @@
 #!/bin/bash
 
-module load ants
-module load fsl/5.0.11
-module unload mrtrix/0.2.12 
-module load mrtrix/3.0
+#module load ants
+#module load fsl/5.0.11
+#module unload mrtrix/0.2.12 
+#module load mrtrix/3.0
 
-[ $PBS_O_WORKDIR ] && cd $PBS_O_WORKDIR
+#[ $PBS_O_WORKDIR ] && cd $PBS_O_WORKDIR
 
 tck_id=`jq -r '._inputs[0].meta.subject' config.json`
 t1_id=`jq -r '._inputs[1].meta.subject' config.json`
@@ -30,7 +30,7 @@ atlas=MNI152_T1_1.25mm_brain.nii.gz
 cp $tck ./tractogram.tck
 
 echo "Computing warp to MNI space..."
-./ants_t1w_transformation.sh $t1_id $t1 MNI $atlas
+singularity exec -e docker://giuliaberto/ants2-mrtrix3-fsl6:1.1 ./ants_t1w_transformation.sh $t1_id $t1 MNI $atlas
 mv sub-${t1_id}_space_MNI_var-t1w_affine.txt $WARP_DIR
 mv sub-${t1_id}_space_MNI_var-t1w_warp.nii.gz $WARP_DIR
 mv sub-${t1_id}_space_MNI_var-t1w4tck_warp.nii.gz $WARP_DIR	
@@ -43,7 +43,7 @@ else
 fi		
 
 echo "Registering the tractogram to MNI space..."
-python ants_t1w_tractogram_registration.py -movID $tck_id -tck $tck -warp_dir ${WARP_DIR}
+singularity exec -e docker://brainlife/dipy:0.16.0 python ants_t1w_tractogram_registration.py -movID $tck_id -tck $tck -warp_dir ${WARP_DIR}
 mv track.tck $OUT_DIR 
 
 if [ -z "$(ls -A -- "$OUT_DIR")" ]; then    

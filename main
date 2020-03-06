@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -k o
-#PBS -l nodes=1:ppn=16,vmem=31gb,walltime=00:30:00
+#PBS -l nodes=1:ppn=16,vmem=31gb,walltime=01:00:00
 
 set -e
 set -x
@@ -14,8 +14,8 @@ else
 fi
 
 echo "No examples provided. STARTING TEST..."
-SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://brainlife/dipy:0.16.0 ./run_test.sh
-#SINGULARITYENV_PYTHONNOUSERSITE=true  singularity exec docker://brainlife/dipy:1.1.1 ./run_test.sh
+singularity exec -e docker://brainlife/dipy:0.16.0 ./run_test.sh
+#singularity exec docker://brainlife/dipy:1.1.1 ./run_test.sh
 
 ret=$?
 if [ ! $ret -eq 0 ]; then
@@ -28,10 +28,11 @@ sed -i '$s/}/,\n"track":".\/tractogram.tck"}/' config.json
 mkdir -p output/tcks
 singularity exec -e docker://brainlife/mcr:r2019a ./compiled/main
 
-#removing files
-rm *.nii.gz -f
-rm -r tractograms_directory -f
-rm -r examples_directory* -f
-rm kdt -f
+if [ -z "$(ls -A -- "output")" ]; then    
+	echo "Conversion to tcks failed."
+	exit 1
+else    
+	echo "Conversion to tcks done."
+fi
 
 echo "Complete"
