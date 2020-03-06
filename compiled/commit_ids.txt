@@ -1,0 +1,18 @@
+/N/u/hayashis/git/vistasoft
+commit a517bdce344e25f08504ede1bf532d8d2626b0b8
+Author: Soichi Hayashi <hayashis@iu.edu>
+Date:   Fri Sep 6 16:23:49 2019 +0000
+
+    cleaner handling in case of empty fg.fibers
+/N/u/brlife/git/jsonlab
+commit 31eabbaab227d500786aaa472b9f5bbd9f082c61
+Author: Qianqian Fang <fangqq@gmail.com>
+Date:   Tue Aug 20 12:20:38 2019 -0400
+
+    fix table transpose issue for uniform type tables
+/N/u/brlife/git/wma_tools
+commit 7bd4087e10ec83a6ac6876e2445112102711a0f3
+Author: Daniel Bullock <dnbulloc@iu.edu>
+Date:   Wed Nov 6 14:20:55 2019 -0500
+
+    Made robust against streamlines shorter than length 5

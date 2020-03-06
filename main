@@ -22,6 +22,12 @@ if [ ! $ret -eq 0 ]; then
 	exit $ret
 fi
 
+echo "Convertion wmc to multiple tcks..."
+sed -i '$s/}/,\n"classification":".\/classification.mat"}/' config.json
+sed -i '$s/}/,\n"track":".\/tractogram.tck"}/' config.json
+mkdir -p output/tcks
+singularity exec -e docker://brainlife/mcr:r2019a ./compiled/main
+
 #removing files
 rm *.nii.gz -f
 rm -r tractograms_directory -f
