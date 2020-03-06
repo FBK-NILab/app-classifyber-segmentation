@@ -36,18 +36,12 @@ else
 fi		
 
 echo "Registering the tractogram to MNI space..."
-tcknormalise $tck 'warp_dir/sub-${t1_id}_space_MNI_var-t1w4tck_warp.nii.gz' 'track.tck' -nthreads 0 -force -quiet
+tcktransform $tck warp_dir/sub-${t1_id}_space_MNI_var-t1w4tck_warp.nii.gz track.tck -nthreads 0 -force -quiet
+mv track.tck $OUT_DIR
 
 if [ -z "$(ls -A -- "$OUT_DIR")" ]; then    
 	echo "Registration failed."
 	exit 1
 else    
 	echo "Registration done."
-fi	
-
-
-
-
-
-
-
+fi
