@@ -29,7 +29,7 @@ You only need to provide the tractogram of the (target) subject you want to extr
 Output: \
 You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
 
-Branch 1.0: \
+#### Branch 1.0:
 You can choose the bundle(s) to be segmented by providing the id(s) related to the training results you want to use as follows: 
 
 HCP-IFOF: \
