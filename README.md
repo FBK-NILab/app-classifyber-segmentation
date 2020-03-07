@@ -46,11 +46,27 @@ HCP-minor: \
 44 - Left MdLF-Ang \
 45 - Right MdLF-Ang 
 
-#### Branch 1.1 (under development):
+#### Branch 1.1:
 Additional options with respect to branch 1.0:
-- if the given tractogram is not already co-registered in the MNI152 T1 space, a streamline linear registration (SLR) to a whole brain streamline MNI template will be performed
-- possibility to segment bundles conforming those of the HCP-major and Clinical datasets
-- the ouput will be given also in tck format
+- initial non-linear registration of the tractogram in the proper MNI152 T1 space
+- the segmented bundles are given also in tck format
+- possibility to segment bundles conforming those of the HCP-major and Clinical datasets as follows:
+
+HCP-major: \
+21 - Left CST \
+22 - Right CST \
+23 - Left IFOF \
+24 - Right IFOF \
+25 - Left ILF \
+26 - Right ILF \
+27 - Left UF \
+28 - Right UF \
+29 - Left AF \
+30 - Right AF
+
+Clinical:
+35 - Left IFOF \
+36 - Left AF 
 
 ### Running locally
 1. git clone this repo.
