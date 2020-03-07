@@ -23,18 +23,34 @@ This app implements only the test phase of Classifyber, i.e. it runs Classifyber
 ### On [BrainLife.io](http://brainlife.io/) 
 You can submit this App online at https://doi.org/10.25663/brainlife.app.265 via the “Execute” tab.
 
+#### Branch 1.1:
 Inputs: \
-You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject. WARNING: the tractogram needs to be already co-registered in the MNI152 T1 space (you can use the app https://doi.org/10.25663/brainlife.app.202 to warp your .tck file to the correct anatomical space).
+You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject (the two inputs should be in the same anatomical space). 
 
 Output: \
-You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
+You will get the wmc and tck segmentations of the bundle(s) of interest in the target subject.
 
-Branch 1.0: \
 You can choose the bundle(s) to be segmented by providing the id(s) related to the training results you want to use as follows: 
+
+HCP-major: \
+21 - Left CST \
+22 - Right CST \
+23 - Left IFOF \
+24 - Right IFOF \
+25 - Left ILF \
+26 - Right ILF \
+27 - Left UF \
+28 - Right UF \
+29 - Left AF \
+30 - Right AF
 
 HCP-IFOF: \
 32 - Left IFOF \
 33 - Right IFOF
+
+Clinical: \
+35 - Left IFOF \
+36 - Left AF 
 
 HCP-minor: \
 38 - Left pArc \
