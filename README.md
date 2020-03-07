@@ -23,13 +23,13 @@ This app implements only the test phase of Classifyber, i.e. it runs Classifyber
 ### On [BrainLife.io](http://brainlife.io/) 
 You can submit this App online at https://doi.org/10.25663/brainlife.app.265 via the “Execute” tab.
 
+#### Branch 1.0:
 Inputs: \
 You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject. WARNING: the tractogram needs to be already co-registered in the MNI152 T1 space (you can use the app https://doi.org/10.25663/brainlife.app.202 to warp your .tck file to the correct anatomical space).
 
 Output: \
 You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
 
-#### Branch 1.0:
 You can choose the bundle(s) to be segmented by providing the id(s) related to the training results you want to use as follows: 
 
 HCP-IFOF: \
@@ -47,9 +47,12 @@ HCP-minor: \
 45 - Right MdLF-Ang 
 
 #### Branch 1.1:
+Inputs: \
+You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject (the two inputs should be in the same anatomical space).
+
 Additional options with respect to branch 1.0:
 - initial non-linear registration of the tractogram in the proper MNI152 T1 space
-- the segmented bundles are given also in tck format
+- the output segmented bundles are given also in tck format
 - possibility to segment bundles conforming those of the HCP-major and Clinical datasets as follows:
 
 HCP-major: \
