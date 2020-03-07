@@ -64,7 +64,7 @@ HCP-major: \
 29 - Left AF \
 30 - Right AF
 
-Clinical:
+Clinical: \
 35 - Left IFOF \
 36 - Left AF 
 
