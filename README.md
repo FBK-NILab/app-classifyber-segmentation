@@ -32,11 +32,11 @@ You will get the wmc segmentation of the bundle(s) of interest in the target sub
 
 You can choose the bundle(s) to be segmented by providing the id(s) related to the training results you want to use as follows: 
 
-HCP-IFOF: \
+HCP-IFOF (WARNING: it might be uneffective if the input tractogram has not ~500K streamlines): \
 32 - Left IFOF \
 33 - Right IFOF
 
-HCP-minor: \
+HCP-minor (WARNING: it might be uneffective if the input tractogram has not ~500K streamlines): \
 38 - Left pArc \
 39 - Right pArc \
 40 - Left TP-SPL \
@@ -55,7 +55,7 @@ Additional options with respect to branch 1.0:
 - the output segmented bundles are given also in tck format
 - possibility to segment also bundles conforming those of the HCP-major and Clinical datasets as follows:
 
-HCP-major: \
+HCP-major (WARNING: it might be uneffective if the input tractogram has <5M streamlines): \
 21 - Left CST \
 22 - Right CST \
 23 - Left IFOF \
@@ -67,7 +67,7 @@ HCP-major: \
 29 - Left AF \
 30 - Right AF
 
-Clinical: \
+Clinical: (WARNING: it might be uneffective if the input tractogram has >300K streamlines) \
 35 - Left IFOF \
 36 - Left AF 
 
