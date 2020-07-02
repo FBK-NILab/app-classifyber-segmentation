@@ -23,6 +23,8 @@ if [ ! $ret -eq 0 ]; then
 fi
 
 echo "Convertion wmc to multiple tcks..."
+static=`jq -r '.tractogram_static' config.json`
+cp $static tractogram.tck
 sed -i '$s/}/,\n"classification":".\/classification.mat"}/' config.json
 sed -i '$s/}/,\n"track":".\/tractogram.tck"}/' config.json
 mkdir -p output/tcks
