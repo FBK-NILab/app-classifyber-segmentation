@@ -41,3 +41,8 @@ fi
 mkdir -p output_wmc
 mv tracts output_wmc
 cp classification.mat output_wmc
+
+#echo "Tract conversion to tck" #.json file is not created
+#mkdir -p output/tcks
+#python3 trk2tck.py tracts_trks/* output/tcks/
+
