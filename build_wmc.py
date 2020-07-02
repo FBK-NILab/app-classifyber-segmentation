@@ -67,7 +67,7 @@ def build_wmc(tck_file, tractID_list):
     	fullname = splitname[-1].capitalize()+' '+' '.join(splitname[0:-1])  
     	tractsfile.append({"name": fullname, "color": color, "filename": filename})
     	#names[tractID-1] = tract_name  
-        names[t] = tract_name		  	
+    	names[t] = tract_name		  	
 
     print("saving classification.mat")
     sio.savemat('classification.mat', { "classification": {"names": names, "index": labels }})
