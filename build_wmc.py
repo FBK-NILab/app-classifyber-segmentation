@@ -38,7 +38,8 @@ def build_wmc(tck_file, tractID_list):
     	tract_name = tract_name_list[t]
     	idx_fname = 'estimated_idx_%s.npy' %tract_name		
     	idx_tract = np.load(idx_fname)
-    	labels[idx_tract] = tractID
+    	#labels[idx_tract] = tractID
+    	labels[idx_tract] = t+1
 
     	#build json file
     	filename = '%s.json' %tractID
