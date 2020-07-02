@@ -14,8 +14,8 @@ else
 fi
 
 echo "No examples provided. STARTING TEST..."
-singularity exec -e docker://brainlife/dipy:0.16.0 ./run_test.sh
-#singularity exec docker://brainlife/dipy:1.1.1 ./run_test.sh
+#singularity exec -e docker://brainlife/dipy:0.16.0 ./run_test.sh
+singularity exec docker://brainlife/dipy:1.1.1 ./run_test.sh
 
 ret=$?
 if [ ! $ret -eq 0 ]; then
