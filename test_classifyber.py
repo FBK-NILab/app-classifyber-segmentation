@@ -22,13 +22,21 @@ def tract_predict(src_dir, superset, tract_name, distance_func=bundles_distances
 	
 	print("Normalize X_test.")	
 	scaler_fname = '%s/scaler_%s' %(src_dir, tract_name)
-	scaler = pickle.load(open(scaler_fname))
+	#scaler = pickle.load(open(scaler_fname)) #python2
+	with open(scaler_fname, 'rb') as f: #python3
+		u = pickle._Unpickler(f)
+		u.encoding = 'latin1'
+		scaler = u.load()
 	X_test = scaler.transform(X_test)
 	
 	print("Prediction.")
 	t0=time.time()
 	clf_fname = '%s/clf_%s' %(src_dir, tract_name)
-	clf = pickle.load(open(clf_fname))
+	#clf = pickle.load(open(clf_fname)) #python2
+	with open(clf_fname, 'rb') as f: #python3
+		u = pickle._Unpickler(f)
+		u.encoding = 'latin1'
+		clf = u.load()
 	y_pred = clf.predict(X_test)
 	print("---->Time to predict X_test of size (%s, %s) = %.2f seconds" %(X_test.shape[0], X_test.shape[1], time.time()-t0)) 
 
@@ -46,13 +54,13 @@ def test_multiple_examples(tractogram_fname, src_dir, tract_name_list, out_dir):
 	tractogram = tractogram.streamlines
 
 	print("Compute kdt and prototypes...")
-	kdt, prototypes = compute_kdtree_and_dr_tractogram(tractogram, num_prototypes=num_prototypes, 
-									 				   distance_func=distance_func, nb_points=nb_points)
+	kdt, prototypes = compute_kdtree_and_dr_tractogram(tractogram, num_prototypes=num_prototypes, \
+					  distance_func=distance_func, nb_points=nb_points)
 		
 	for tract_name in tract_name_list:
 		t1=time.time()
 		k = np.int(0.01*len(tractogram))
-		print("Computing the test superset with k = %i ..." %k)
+		print("Computing the test superset with k = %i..." %k)
 		example_fname = 'templates_tracts/%s.trk' %tract_name
 		tract = nib.streamlines.load(example_fname).streamlines
 		superset_idx_test = compute_superset(tract, kdt, prototypes, k=k, distance_func=distance_func, nb_points=nb_points)
@@ -86,7 +94,11 @@ if __name__ == '__main__':
 	with open('config.json') as f:
 		data = json.load(f)
 		tractID_list = np.array(eval(data["tractID_list"]), ndmin=1)
-	table = pickle.load(open('IDs_tracts_dictionary.pickle'))
+	#table = pickle.load(open('IDs_tracts_dictionary.pickle')) #python2
+	with open('IDs_tracts_dictionary.pickle', 'rb') as f: #python3
+		u = pickle._Unpickler(f)
+		u.encoding = 'latin1'
+		table = u.load()
 	tract_name_list = []
 	f = open("tract_name_list.txt","a")
 	for i in tractID_list:

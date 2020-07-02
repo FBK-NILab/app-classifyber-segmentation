@@ -78,13 +78,17 @@ def compute_X_roi(superset, tract_name):
 	#table = pickle.load(open(table_filename)) #python2
 	#roi1_lab = table[tract_name].items()[0][1] #python2
 	#roi2_lab = table[tract_name].items()[1][1] #python2
-	#d = pickle.load(open('IDs_tracts_dictionary.pickle')) #python2
 	with open(table_filename, 'rb') as f: #python3
 		u = pickle._Unpickler(f)
 		u.encoding = 'latin1'
 		table = u.load()
 	roi1_lab = table[tract_name]['label_ROI1'] #python3
 	roi2_lab = table[tract_name]['label_ROI2'] #python3
+	#d = pickle.load(open('IDs_tracts_dictionary.pickle')) #python2
+	with open('IDs_tracts_dictionary.pickle', 'rb') as f: #python3
+		u = pickle._Unpickler(f)
+		u.encoding = 'latin1'
+		d = u.load()
 	for i, n in d.items():
 		if n == {tract_name}:
 			tractID=eval(i)

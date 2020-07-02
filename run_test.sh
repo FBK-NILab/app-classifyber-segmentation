@@ -1,7 +1,6 @@
 #!/bin/bash
 
 subjID=`jq -r '._inputs[0].meta.subject' config.json`
-#static=`jq -r '.tractogram_static' config.json`
 static=track_aligned/track.tck
 t1_static=`jq -r '.t1_static' config.json`
 
@@ -13,13 +12,12 @@ fi
 
 echo "Tractogram conversion to trk"
 python3 tck2trk.py $t1_static $static -f
-cp track_aligned/track.trk $subjID'_track.trk'
 
 echo "Running Classifyber (only test)"
 mkdir -p tracts_trks
 python3 test_classifyber.py \
 		-src_dir 'results_training' \
-		-static $subjID'_track.trk' \
+		-static 'track_aligned/track.trk' \
 		-out_dir 'tracts_trks'
 
 if [ -z "$(ls -A -- "tracts_trks")" ]; then    
