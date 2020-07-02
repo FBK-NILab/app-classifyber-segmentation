@@ -66,5 +66,4 @@ done
 rm -f $T1W_IWARP_FIX
 warpcorrect $WARP_TMP $WARP_T1W -force -quiet
 rm ${WARP_PRE}-*
-rm $T1W_M
 rm $T1W_IWARP

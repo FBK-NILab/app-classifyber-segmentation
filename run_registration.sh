@@ -20,7 +20,6 @@ mkdir -p warps
 tck=`jq -r '.tractogram_static' config.json`
 t1=`jq -r '.t1_static' config.json`
 atlas=MNI152_T1_1.25mm_brain.nii.gz
-cp $tck ./tractogram.tck
 
 echo "Computing warp to MNI space..."
 ./ants_t1w_transformation.sh $t1_id $t1 MNI $atlas
