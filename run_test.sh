@@ -41,5 +41,5 @@ else
 fi
 
 mkdir -p output_wmc
-cp tracts output_wmc
+mv tracts output_wmc
 cp classification.mat output_wmc
