@@ -12,12 +12,12 @@ echo "Inputs subject id incorrectly inserted. Check them again."
 fi
 
 echo "Tractogram conversion to trk"
-python tck2trk.py $t1_static $static -f
+python3 tck2trk.py $t1_static $static -f
 cp track_aligned/track.trk $subjID'_track.trk'
 
 echo "Running Classifyber (only test)"
 mkdir -p tracts_trks
-python test_classifyber.py \
+python3 test_classifyber.py \
 		-src_dir 'results_training' \
 		-static $subjID'_track.trk' \
 		-out_dir 'tracts_trks'
@@ -31,7 +31,7 @@ fi
 
 echo "Building the wmc structure"
 mkdir -p tracts
-python build_wmc.py -tractogram $static
+python3 build_wmc.py -tractogram $static
 
 if [ -f 'classification.mat' ]; then 
     echo "WMC structure created."
