@@ -40,3 +40,6 @@ else
 	exit 1
 fi
 
+mkdir -p output_wmc
+mv tracts output_wmc
+mv classification.mat output_wmc
