@@ -16,7 +16,6 @@ def build_wmc(tck_file, tractID_list):
     """
     Build the wmc structure.
     """
-    print("building wmc structure")
     tractogram = nib.streamlines.load(tck_file)
     tractogram = tractogram.streamlines
     labels = np.zeros((len(tractogram),1))
