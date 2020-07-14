@@ -1,9 +1,10 @@
 #!/bin/bash
 
 subjID=`jq -r '._inputs[0].meta.subject' config.json`
-#static=`jq -r '.tractogram_static' config.json`
-static=track_aligned/track.tck
+static=`jq -r '.tractogram_static' config.json`
+static_mni=track_aligned/track.tck
 t1_static=`jq -r '.t1_static' config.json`
+t1_static_mni=MNI152_T1_1.25mm_brain.nii.gz
 
 echo "Check the inputs subject id"
 if [ ! $subjID == `jq -r '._inputs[1].meta.subject' config.json` ]; then
@@ -12,7 +13,7 @@ echo "Inputs subject id incorrectly inserted. Check them again."
 fi
 
 echo "Tractogram conversion to trk"
-python tck2trk.py $t1_static $static -f
+python tck2trk.py $t1_static_mni $static_mni -f
 cp track_aligned/track.trk $subjID'_track.trk'
 
 echo "Running Classifyber (only test)"
