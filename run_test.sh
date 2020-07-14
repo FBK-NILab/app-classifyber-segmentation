@@ -19,7 +19,7 @@ echo "Running Classifyber (only test)"
 mkdir -p tracts_trks
 python test_classifyber.py \
 		-src_dir 'results_training' \
-		-static track_aligned/track.trk \
+		-static 'track_aligned/track.trk' \
 		-out_dir 'tracts_trks'
 
 if [ -z "$(ls -A -- "tracts_trks")" ]; then    
