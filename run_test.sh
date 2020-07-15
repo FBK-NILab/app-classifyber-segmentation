@@ -43,3 +43,8 @@ fi
 mkdir -p output_wmc
 mv tracts output_wmc
 cp classification.mat output_wmc
+
+#Prepare tract conversion from wmc to tck with matlab
+sed -i '$s/}/,\n"classification":".\/classification.mat"}/' config.json
+sed -i '$s/}/,\n"track":".\/tractogram.tck"}/' config.json
+mkdir -p output/tcks
