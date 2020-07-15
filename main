@@ -22,10 +22,9 @@ if [ ! $ret -eq 0 ]; then
 	exit $ret
 fi
 
-echo "Convertion wmc to multiple tcks..."
-sed -i '$s/}/,\n"classification":".\/classification.mat"}/' config.json
-sed -i '$s/}/,\n"track":".\/tractogram.tck"}/' config.json
-mkdir -p output/tcks
+echo "Convert wmc to multiple tcks..."
+tractogram=`jq -r '.tractogram_static' config.json`
+cp $tractogram tractogram.tck
 singularity exec -e docker://brainlife/mcr:r2019a ./compiled/main
 
 if [ -z "$(ls -A -- "output")" ]; then    
