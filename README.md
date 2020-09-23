@@ -1,7 +1,8 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.265-blue.svg)](https://doi.org/10.25663/brainlife.app.265)
 
 # app-classifyber-segmentation
-This app implements only the test phase of Classifyber, i.e. it runs Classifyber as a pre-trained bundle segmentation method. Classifyber is a supervised streamline-based method that performs automatic bundle segmentation based on binary linear classification, which simultaneously combines information from bundle geometries, connectivity patterns, and atlases. In addition, it is robust to a multitude of diverse settings, i.e. it can deal with different bundle sizes, tracking algorithms, and dMRI data qualities.
+This app implements only the TEST PHASE of Classifyber, i.e. it runs Classifyber as a pre-trained bundle segmentation method. Classifyber is a supervised streamline-based method that performs automatic bundle segmentation based on binary linear classification, which simultaneously combines information from bundle geometries, connectivity patterns, and atlases. In addition, it is robust to a multitude of diverse settings, i.e. it can deal with different bundle sizes, tracking algorithms, and dMRI data qualities. \
+If you want to run both the TRAINING and TEST PHASES, please refer to the app https://doi.org/10.25663/brainlife.app.228.
 
 ![](graphical_abstract_classifyber.png)
 
@@ -11,16 +12,18 @@ This app implements only the test phase of Classifyber, i.e. it runs Classifyber
 ### Contributors
 - Emanuele Olivetti (olivetti@fbk.eu)
 
-### Funding 
+### Funding Acknowledgement
+We kindly ask that you acknowledge the funding below in your publications and code reusing this code.
 [![NSF-BCS-1734853](https://img.shields.io/badge/NSF_BCS-1734853-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1734853)
 [![NSF-BCS-1636893](https://img.shields.io/badge/NSF_BCS-1636893-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1636893)
 [![NSF-AOC-1916518](https://img.shields.io/badge/NSF_AOC-1916518-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1916518)
 
-### Reference
+### Citation
+We kindly ask that you cite the following article when publishing papers and code using this code.
 ["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://www.biorxiv.org/content/10.1101/2020.02.10.942714v1), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. 
 
 ## Running the app
-### On [BrainLife.io](http://brainlife.io/) 
+### On [Brainlife.io](http://brainlife.io/) 
 You can submit this App online at https://doi.org/10.25663/brainlife.app.265 via the “Execute” tab.
 
 #### Branch 1.0:
@@ -87,4 +90,6 @@ Clinical: (WARNING: it might be uneffective if the input tractogram has >300K st
 ```
 
 #### Dependencies
-This App requires [singularity](https://sylabs.io/singularity/) to run. If you don’t have singularity, you will need to install following dependencies. It also requires [jq](https://stedolan.github.io/jq/).
+This App requires [singularity](https://sylabs.io/singularity/) to run. If you don’t have singularity, you will need to install following dependencies.
+
+#### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
