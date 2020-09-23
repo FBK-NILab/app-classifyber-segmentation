@@ -13,13 +13,13 @@ If you want to run both the TRAINING and TEST PHASES, please refer to the app ht
 - Emanuele Olivetti (olivetti@fbk.eu)
 
 ### Funding Acknowledgement
-We kindly ask that you acknowledge the funding below in your publications and code reusing this code.
+We kindly ask that you acknowledge the funding below in your publications and code reusing this code. \
 [![NSF-BCS-1734853](https://img.shields.io/badge/NSF_BCS-1734853-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1734853)
 [![NSF-BCS-1636893](https://img.shields.io/badge/NSF_BCS-1636893-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1636893)
 [![NSF-AOC-1916518](https://img.shields.io/badge/NSF_AOC-1916518-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1916518)
 
 ### Citation
-We kindly ask that you cite the following article when publishing papers and code using this code.
+We kindly ask that you cite the following article when publishing papers and code using this code. \
 ["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://www.biorxiv.org/content/10.1101/2020.02.10.942714v1), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. 
 
 ## Running the app
