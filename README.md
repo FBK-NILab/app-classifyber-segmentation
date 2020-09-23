@@ -1,8 +1,8 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.265-blue.svg)](https://doi.org/10.25663/brainlife.app.265)
 
 # app-classifyber-segmentation
-This app implements only the TEST PHASE of Classifyber, i.e. it runs Classifyber as a pre-trained bundle segmentation method. Classifyber is a supervised streamline-based method that performs automatic bundle segmentation based on binary linear classification, which simultaneously combines information from bundle geometries, connectivity patterns, and atlases. In addition, it is robust to a multitude of diverse settings, i.e. it can deal with different bundle sizes, tracking algorithms, and dMRI data qualities. \
-If you want to run both the TRAINING and TEST PHASES, please refer to the app https://doi.org/10.25663/brainlife.app.228.
+This App implements only the TEST PHASE of Classifyber, i.e. it runs Classifyber as a pre-trained bundle segmentation method. Classifyber is a supervised streamline-based method that performs automatic bundle segmentation based on binary linear classification, which simultaneously combines information from bundle geometries, connectivity patterns, and atlases. In addition, it is robust to a multitude of diverse settings, i.e. it can deal with different bundle sizes, tracking algorithms, and dMRI data qualities. \
+If you want to run both the TRAINING and TEST PHASES, please refer to the App https://doi.org/10.25663/brainlife.app.228.
 
 ![](graphical_abstract_classifyber.png)
 
@@ -31,7 +31,7 @@ Inputs: \
 You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject. WARNING: the tractogram needs to be already co-registered in the MNI152 T1 space (you can use the app https://doi.org/10.25663/brainlife.app.202 to warp your .tck file to the correct anatomical space).
 
 Output: \
-You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the app https://doi.org/10.25663/brainlife.app.251.
+You will get the wmc segmentation of the bundle(s) of interest in the target subject. You can convert it in multiple .tck files with the App https://doi.org/10.25663/brainlife.app.251.
 
 You can choose the bundle(s) to be segmented by providing the id(s) related to the training results you want to use as follows: 
 
@@ -90,6 +90,6 @@ Clinical: (WARNING: it might be uneffective if the input tractogram has >300K st
 ```
 
 #### Dependencies
-This App requires [singularity](https://sylabs.io/singularity/) to run. If you don’t have singularity, you will need to install following dependencies.
+This App only requires [singularity](https://sylabs.io/singularity/) to run.
 
 #### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
