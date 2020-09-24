@@ -20,7 +20,7 @@ We kindly ask that you acknowledge the funding below in your publications and co
 
 ### Citation
 We kindly ask that you cite the following article when publishing papers and code using this code. \
-["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://www.biorxiv.org/content/10.1101/2020.02.10.942714v1), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. 
+["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://www.sciencedirect.com/science/article/pii/S1053811920308879?via%3Dihub), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. 
 
 ## Running the app
 ### On [Brainlife.io](http://brainlife.io/) 
