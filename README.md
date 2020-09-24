@@ -51,7 +51,7 @@ HCP-minor (WARNING: it might be uneffective if the input tractogram has not ~500
 
 #### Branch 1.1:
 Inputs: \
-You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject (the two inputs should be in the same anatomical space).
+You only need to provide the tractogram of the (target) subject you want to extract the bundle(s) from and the anatomical T1 of the (target) subject (the two inputs should be in the same anatomical space). The tractogram will be then internally co-registered to the MNI152 T1 space.
 
 Additional options with respect to branch 1.0:
 - initial non-linear registration of the tractogram in the proper MNI152 T1 space
@@ -73,6 +73,12 @@ HCP-major (WARNING: it might be uneffective if the input tractogram has <5M stre
 Clinical: (WARNING: it might be uneffective if the input tractogram has >300K streamlines) \
 35 - Left IFOF \
 36 - Left AF 
+
+#### Branch 1.2:
+As branch 1.1 with some small enhancements.
+
+#### Branch 1.3:
+As branch 1.2, but running with python3.
 
 ### Running locally
 1. git clone this repo.
