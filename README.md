@@ -1,10 +1,11 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.265-blue.svg)](https://doi.org/10.25663/brainlife.app.265)
 
 # app-classifyber-segmentation
-This App implements only the TEST PHASE of Classifyber, i.e. it runs Classifyber as a pre-trained bundle segmentation method. Classifyber is a supervised streamline-based method that performs automatic bundle segmentation based on binary linear classification, which simultaneously combines information from bundle geometries, connectivity patterns, and atlases. In addition, it is robust to a multitude of diverse settings, i.e. it can deal with different bundle sizes, tracking algorithms, and dMRI data qualities. \
-If you want to run both the TRAINING and TEST PHASES, please refer to the App https://doi.org/10.25663/brainlife.app.228.
+This App implements only the TEST PHASE of Classifyber, i.e. it runs Classifyber as a pre-trained bundle segmentation method. Classifyber is a supervised streamline-based method that performs automatic bundle segmentation based on binary linear classification, which simultaneously combines information from bundle geometries, connectivity patterns, and atlases. In addition, it is robust to a multitude of diverse settings, i.e. it can deal with different bundle sizes, tracking algorithms, and dMRI data qualities.
 
 ![](graphical_abstract_classifyber.png)
+
+If you want to run both the TRAINING and TEST PHASES, please refer to the App https://doi.org/10.25663/brainlife.app.228.
 
 ### Authors
 - Giulia Bertò (giulia.berto.4@gmail.com)
@@ -19,8 +20,8 @@ We kindly ask that you acknowledge the funding below in your publications and co
 [![NSF-AOC-1916518](https://img.shields.io/badge/NSF_AOC-1916518-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1916518)
 
 ### Citation
-We kindly ask that you cite the following article when publishing papers and code using this code. \
-["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://www.sciencedirect.com/science/article/pii/S1053811920308879?via%3Dihub), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. 
+We kindly ask that you cite the following article when publishing papers and code using this code: \
+["Classifyber, a robust streamline-based linear classifier for white matter bundle segmentation"](https://doi.org/10.1016/j.neuroimage.2020.117402), Bertò, G., Bullock, D., Astolfi, P., Hayashi, S., Zigiotto, L., Annicchiarico, L., Corsini, F., De Benedictis, A., Sarubbo, S., Pestilli, F., Avesani, P., Olivetti, E. NeuroImage (2020).
 
 ## Running the app
 ### On [Brainlife.io](http://brainlife.io/) 
