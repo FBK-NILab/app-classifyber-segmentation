@@ -99,4 +99,4 @@ As branch 1.2, but running with python3.
 #### Dependencies
 This App only requires [singularity](https://sylabs.io/singularity/) to run.
 
-#### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
+#### MIT Copyright (c) 2020 Bruno Kessler Foundation (FBK)
