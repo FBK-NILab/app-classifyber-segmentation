@@ -102,7 +102,7 @@ As branch 1.2, but running with python3.
 ```
 
 ### Output
-The output is a wmc file containing the specified bundles segmented by Classifyber. 
+The output is a wmc file containing the specified bundles segmented by Classifyber. The same output is also given as bundles in .tck format.
 
 #### Dependencies
 This App only requires [singularity](https://sylabs.io/singularity/) to run.
